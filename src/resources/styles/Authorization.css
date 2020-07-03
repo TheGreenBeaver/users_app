@@ -1,0 +1,29 @@
+#auth-wrapper {
+    margin-top: 10%;
+    width: 100%;
+}
+
+#auth-wrapper input {
+    width: 45%;
+    padding: 4px 8px;
+    border: #c5cae9 5px solid;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: #757575;
+    margin: auto auto 2%;
+    min-width: 180px;
+}
+
+#auth-wrapper button {
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    width: 30%;
+    font-size: 2rem;
+    cursor: pointer;
+    min-width: 120px;
+    margin: 4% auto auto;
+}
+

@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import Authorization from "./components/Authorization";
+import UsersList from "./components/UsersList";
+import { store } from './Store'
+import '../src/resources/styles/Main.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <div
+                id='main-container'
+            >
+                <img
+                    id='logo'
+                    src='https://raw.githubusercontent.com/TheGreenBeaver/ImgStorage/4b1beb035a7db28d9ea803129695e146d5c3a20b/usersApp/logo.svg'
+                    alt='logo'
+                />
+
+                <Authorization />
+
+            </div>
+        </Provider>
+    );
 }
 
 export default App;

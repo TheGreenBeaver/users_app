@@ -1,13 +1,19 @@
-import React from 'react';
-import { Provider } from "react-redux";
+import React, { Component } from 'react';
 import Authorization from "./components/Authorization";
 import UsersList from "./components/UsersList";
-import { store } from './Store'
 import '../src/resources/styles/Main.css'
 
-function App() {
-    return (
-        <Provider store={store}>
+class App extends Component {
+
+    state = {
+        token: ''
+    };
+
+    render() {
+
+        const { token } = this.state;
+
+        return (
             <div
                 id='main-container'
             >
@@ -17,11 +23,23 @@ function App() {
                     alt='logo'
                 />
 
-                <Authorization />
+                {
+                    token === ''
+                        ?
+                        <Authorization setToken={this.setToken} />
+                        :
+                        <UsersList token={token} />
+                }
 
             </div>
-        </Provider>
-    );
+        );
+    }
+
+    setToken = token => {
+        this.setState({
+            token: token
+        })
+    }
 }
 
 export default App;

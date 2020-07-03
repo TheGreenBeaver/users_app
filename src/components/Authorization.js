@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import { connect } from "react-redux";
-import { authorize, enterUserData } from "../actions/AuthorizationActions";
-import { ENTER_PASSWORD, ENTER_USERNAME } from '../actions/Types'
 import '../resources/styles/Authorization.css'
-import UsersList from "./UsersList";
+import $ from 'jquery'
 
 
 class Authorization extends Component {
 
+    state = {
+        username: '',
+        password: '',
+        authError: false
+    };
+
     render() {
+
+        const { authError } = this.state;
 
         return (
             <div
@@ -20,50 +25,80 @@ class Authorization extends Component {
                     type='text'
                     placeholder='username'
                     name='username'
-                    onChange={e => this.onChange(ENTER_USERNAME, e)}
+                    onChange={this.onChange}
                 />
 
                 <input
                     type='password'
                     placeholder='password'
                     name='password'
-                    onChange={e => this.onChange(ENTER_PASSWORD, e)}
+                    onChange={this.onChange}
                 />
 
-
                 <button
-                    onClick={() => this.logIn()}
+                    className='log-in-btn'
+                    onClick={this.logIn}
                 >
                     Log In
                 </button>
 
-                <UsersList/>
+                {
+                    authError
+                        ?
+                        <p
+                            id='auth-error-alert'
+                        >
+                            Something went wrong... Either the password or the username must be incorrect
+                        </p>
+                        :
+                        null
+                }
 
             </div>
         );
     }
 
     logIn = () => {
-        const { username, password } = this.props;
-        this.props.authorize(username, password);
+        $('.log-in-btn').text('').prop('disabled', true).addClass('auth-loading');
+        const { username, password } = this.state;
+        $.ajax(
+            'http://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
+            {
+                type: 'POST',
+                data: JSON.stringify({
+                    username: username,
+                    password: password
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                },
+                success: this.onAuthSuccess,
+                error: this.onAuthError
+            }
+        )
     };
 
-    onChange = (dataType, e) => {
-        const userData =  e.target.value;
-        enterUserData(dataType, userData)
+    onAuthSuccess = data => {
+        this.props.setToken(data.token)
+    };
+
+    onAuthError = () => {
+        this.setState({
+            authError: true
+        });
+        $('.log-in-btn').removeClass('auth-loading').text('Log In').prop('disabled', false)
+    };
+
+    onChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value,
+            authError: false
+        })
     }
 }
 
 Authorization.propTypes = {
-    authorize: PropTypes.func.isRequired,
-    enterUserData: PropTypes.func.isRequired,
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired
+    setToken: PropTypes.func.isRequired
 };
 
-const mapStateToProps = storeState => ({
-    username: storeState.username,
-    password: storeState.password
-});
-
-export default connect(mapStateToProps, { authorize, enterUserData })(Authorization);
+export default Authorization;

@@ -15,7 +15,7 @@ class UsersList extends Component {
     componentDidMount() {
         $.ajax(
             {
-                url: 'http://emphasoft-test-assignment.herokuapp.com/api/v1/users/',
+                url: 'https://emphasoft-test-assignment.herokuapp.com/api/v1/users/',
                 type: 'GET',
                 headers: {
                     'content-type': 'application/json',

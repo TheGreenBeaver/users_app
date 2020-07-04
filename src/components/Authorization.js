@@ -74,7 +74,7 @@ class Authorization extends Component {
         $('.log-in-out-btn').text('').prop('disabled', true).addClass('auth-loading');
         const { username, password } = this.state;
         $.ajax(
-            'http://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
+            'https://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
             {
                 type: 'POST',
                 data: JSON.stringify({

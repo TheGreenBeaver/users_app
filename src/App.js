@@ -5,8 +5,25 @@ import '../src/resources/styles/Main.css'
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+
+        const token = localStorage.getItem('token');
+        if (token != null) {
+            this.state.token = token
+        }
+    }
+
     state = {
         token: ''
+    };
+
+    componentDidMount() {
+        window.addEventListener('beforeunload', this.saveState, false)
+    }
+
+    saveState = () => {
+        localStorage.setItem('token', this.state.token)
     };
 
     render() {
@@ -26,9 +43,14 @@ class App extends Component {
                 {
                     token === ''
                         ?
-                        <Authorization setToken={this.setToken} />
+                        <Authorization
+                            setToken={this.setToken}
+                        />
                         :
-                        <UsersList token={token} />
+                        <UsersList
+                            setToken={this.setToken}
+                            token={token}
+                        />
                 }
 
             </div>

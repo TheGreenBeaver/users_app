@@ -1,5 +1,5 @@
 #auth-wrapper {
-    margin-top: 10%;
+    margin-top: 6vh;
     width: 100%;
 }
 
@@ -10,36 +10,35 @@
     border-radius: 10px;
     font-size: 2rem;
     color: #757575;
-    margin: auto auto 2%;
+    margin: auto auto 3vh;
     min-width: 180px;
+    max-width: 330px;
+    display: block;
 }
 
-#auth-wrapper input:focus {
-    border-color: #3f51b5;
+#auth-wrapper input:invalid {
+    border-color: red;
 }
 
-.log-in-btn {
-    background-color: #ff4081;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 4px 8px;
-    width: 30%;
-    min-width: 120px;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: 4% auto auto;
-    transition: all ease 0.3s;
-}
-
-#auth-error-alert {
-    width: 45%;
+#error-alert {
+    width: 85%;
     min-width: 180px;
     font-size: 2rem;
-    margin: 2% auto auto;
+    margin: 5vh auto auto;
+    color: #757575;
 }
 
-.auth-loading {
+.log-in-out-btn {
+    margin: 5vh auto auto;
+    transition: rotate, bounce ease 0.5s;
+}
+
+.log-in-out-btn:disabled {
+    background-color: #ff9db5;
+    cursor: default;
+}
+
+.auth-loading:disabled {
     background-color: transparent;
     min-width: 40px;
     width: 40px;
@@ -52,9 +51,19 @@
     cursor: default;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(-360deg);
-    }
+.auth-success:disabled {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: default;
+    border: #3f51b5 solid 3px;
+    animation: bounce 0.3s ease-in;
+    background: transparent center no-repeat url("../img/tick.svg");
 }
 
+@keyframes bounce {
+    from {
+        transform: scale(0.8);
+    }
+}

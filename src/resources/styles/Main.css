@@ -5,12 +5,19 @@
     font-family: Impact, sans-serif;
 }
 
+#logo {
+    margin: auto;
+    height: 12vh;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
     background-color: #c5cae9;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #root {
@@ -21,29 +28,90 @@ body {
 #main-container {
     display: block;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     background-color: #fff;
-    width: 45%;
-    height: 65%;
-    border-radius: 40px;
     text-align: center;
-    padding: 4%;
-    min-width: 350px;
-    max-width: 800px;
-    min-height: 300px;
 }
 
-#main-container *{
-    display: block;
+@media (max-width: 790px), (max-height: 400px) {
+
+    #main-container {
+        width: 100%;
+        border-radius: 0;
+        padding: 16vh 18vw;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    #logo {
+        min-height: 50px;
+    }
+
 }
 
-#main-container img{
-    margin: auto;
+@media (max-aspect-ratio: 5 / 2) and (max-width: 1200px), (max-width: 400px), (max-height: 250px){
+    html {
+        font-size: 50%;
+    }
 }
 
-#logo {
-    width: 40%;
-    min-width: 150px;
+@media (min-width: 790px) and (min-height: 400px) {
+
+    #main-container {
+        min-width: 350px;
+        max-width: 780px;
+        min-height: 390px;
+        max-height: 500px;
+        width: 45%;
+        height: 65%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 40px;
+        padding: 5vh 5vw;
+        box-shadow: 0 0 25px rgba(63, 81, 181, 0.5);
+    }
+
+    @media (min-aspect-ratio: 2 / 3) and (max-aspect-ratio: 3 / 2), (max-aspect-ratio: 5 / 2) {
+        #main-container {
+            min-height: 420px;
+        }
+    }
+
+    #logo {
+        margin-top: 2.5vh;
+        min-height: 80px;
+    }
+
+}
+
+.log-in-out-btn {
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    width: 30%;
+    min-width: 120px;
+    max-width: 220px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.log-in-out-btn:enabled:hover {
+    box-shadow: 0 0 15px #ff9db5;
+}
+
+.log-in-out-btn:enabled:active {
+    box-shadow: 0 0 15px #ff4081;
+}
+
+#main-container input:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 15px #c5cae9;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
 }

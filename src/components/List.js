@@ -3,8 +3,16 @@ import '../resources/styles/UsersList.css'
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import $ from 'jquery';
+import { Scrollbars } from 'react-custom-scrollbars';
+
 
 class List extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.scrollRef = React.createRef();
+    }
 
     state = {
         search: ''
@@ -33,9 +41,24 @@ class List extends Component {
 
                 </div>
 
-                <div
-                    id='users-list-container'
-                    onScroll={this.scrollShadow}
+                <Scrollbars
+                    autoHide={true}
+                    autoHideDelay={500}
+                    onUpdate={this.scrollShadow}
+                    hideTracksWhenNotNeeded={true}
+                    renderThumbVertical={this.renderThumb}
+                    renderTrackVertical={this.renderTrack}
+                    renderView={this.renderView}
+                    universal={true}
+                    ref={this.scrollRef}
+                    style={
+                        {
+                            width: '80%',
+                            height: '70%',
+                            margin: '3vh auto auto',
+                            borderRadius: '10px 10px'
+                        }
+                    }
                 >
                     <div
                         id='shadow-dropper'
@@ -45,7 +68,7 @@ class List extends Component {
 
                     <this.ListItems />
 
-                </div>
+                </Scrollbars>
 
             </React.Fragment>
         );
@@ -80,14 +103,41 @@ class List extends Component {
         )
     };
 
+    renderView({ ...props }) {
+        return (
+            <div
+                id='users-list-container'
+                {...props}
+            />
+        )
+    }
+
+    renderTrack({ ...props }) {
+        return (
+            <div
+                className='scroll-track'
+                {...props}
+            />
+        );
+    }
+
+    renderThumb({ ...props }) {
+        return (
+            <div
+                className='scroll-thumb'
+                {...props}/>
+        );
+    }
+
     search = e => {
+        this.scrollRef.current.scrollTop();
         this.setState({
             search: e.target.value
         })
     };
 
-    scrollShadow = () => {
-        const scrollTop = $('#users-list-container').scrollTop();
+    scrollShadow = values => {
+        const { scrollTop } = values;
         $('#shadow-dropper').css('top', scrollTop);
     }
 }

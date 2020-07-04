@@ -87,7 +87,8 @@ class UsersList extends Component {
     }
 
     logOut = () => {
-        this.props.setToken('');
+        $('.log-in-out-btn').text('See Ya!').prop('disabled', true).addClass('log-out');
+        setTimeout(() => this.props.setToken(''), 1000);
     };
 
 }

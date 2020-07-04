@@ -28,14 +28,8 @@
 }
 
 #users-list-container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 70%;
-    width: 80%;
-    margin: 3vh auto auto;
     border-radius: 10px;
     background-color: #c5cae9;
-    position: relative;
 }
 
 #shadow-dropper {
@@ -46,7 +40,9 @@
     top: 0;
     border-radius: 10px;
     background-color: transparent;
-    box-shadow: inset 0 8px 10px -10px #3f51b5, inset 0 -8px 10px -10px #3f51b5;
+    box-shadow: 0 8px 10px -10px #3f51b5 inset, 0 -8px 10px -10px #3f51b5 inset;
+    -moz-box-shadow: 0 8px 10px -10px #3f51b5 inset, 0 -8px 10px -10px #3f51b5 inset;
+    -webkit-box-shadow: 0 8px 10px -10px #3f51b5 inset, 0 -8px 10px -10px #3f51b5 inset;
     pointer-events: none;
 }
 
@@ -67,20 +63,8 @@
 .user-link:hover {
     color: #3f51b5;
     box-shadow: 0 0 7px #3f51b5;
-}
-
-.user-info-container {
-    display: flex;
-    margin: auto;
-    width: 80%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.user-info-container p {
-    color: #757575;
-    font-size: 2rem;
-    display: flex;
+    -moz-box-shadow: 0 0 7px #3f51b5;
+    -webkit-box-shadow: 0 0 7px #3f51b5;
 }
 
 .log-in-out-btn {
@@ -94,8 +78,24 @@
 
 #user-info-wrapper {
     width: 80%;
+    height: 100%;
     margin: auto;
-    padding-top: 5vh;
+    padding-top: 6vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.column {
+    height: 100%;
+}
+
+.column p {
+    font-size: 2rem;
+    color: #757575;
+    display: block;
+    margin: 0 20px;
+    text-align: left;
 }
 
 #loading {
@@ -106,5 +106,80 @@
     border-left: none;
     border-top: none;
     animation: rotate 1s linear infinite;
+    margin: 6vh auto auto;
+}
+
+.btn-pusher {
+    padding-top: 5vh;
+    width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#prev-user-btn {
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: center no-repeat url("../img/prevUsr.svg");
+    background-size: cover;
+}
+
+#prev-user-btn:hover {
+    background: center no-repeat url("../img/prevUsrHvr.svg");
+    background-size: cover;
+}
+
+#next-user-btn {
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: center no-repeat url("../img/nextUsr.svg");
+    background-size: cover;
+}
+
+#next-user-btn:hover {
+    background: center no-repeat url("../img/nextUsrHvr.svg");
+    background-size: cover;
+}
+
+#back-to-list {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    color: transparent;
+    background: center no-repeat url("../img/backToList.svg");
+}
+
+#back-to-list:hover {
+    background: center no-repeat url("../img/backToListHvr.svg");
+}
+
+#container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.scroll-track {
+    height: 80%;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.scroll-thumb {
+    border-radius: 3px;
+    background-color: #c5cae9;
+    opacity: 0.9;
+    box-shadow: 0 0 10px #3f51b5;
+    cursor: pointer;
 }

@@ -30,6 +30,7 @@ class Authorization extends Component {
                     pattern='^[\w.@+-]+$'
                     onChange={this.onChange}
                     onBlur={this.onBlur}
+                    onKeyUp={this.onKeyUp}
                 />
 
                 <input
@@ -40,6 +41,7 @@ class Authorization extends Component {
                     pattern='^(?=.*[A-Z])(?=.*\d).{8,}$'
                     onChange={this.onChange}
                     onBlur={this.onBlur}
+                    onKeyUp={this.onKeyUp}
                 />
 
                 <button
@@ -48,7 +50,7 @@ class Authorization extends Component {
                     disabled={
                         username === '' ||
                         password === '' ||
-                        error !== ''
+                        ['password', 'auth', 'username'].includes(error)
                     }
                 >
                     Log In
@@ -95,11 +97,16 @@ class Authorization extends Component {
         setTimeout(() => this.props.setToken(data.token), 1000);
     };
 
-    onAuthError = () => {
+    onAuthError = error => {
+        const errVal = error.status === 400 ? 'auth' : 'connect';
+        const btn = $('.log-in-out-btn');
+        btn.removeClass('auth-loading').text('Log In');
         this.setState({
-            error: 'auth'
+            error: errVal
         });
-        $('.log-in-out-btn').removeClass('auth-loading').text('Log In')
+        if (error.status !== 400) {
+            btn.prop('disabled', false)
+        }
     };
 
     onBlur = e => {
@@ -124,8 +131,17 @@ class Authorization extends Component {
         })
     };
 
+    onKeyUp = e => {
+        const { password, username, error } = this.state;
+        if (e.which === 13 && password !== '' && username !== '' && error === '') {
+            this.logIn()
+        }
+    };
+
     getErrorAlert = () => {
         switch (this.state.error) {
+            case 'connect':
+                return 'Please check your internet connection and try again';
             case 'auth':
                 return "Something went wrong. Please check if you've entered the username and the password correctly";
             case 'username':

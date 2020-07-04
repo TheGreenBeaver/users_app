@@ -30,7 +30,6 @@
 
 .log-in-out-btn {
     margin: 5vh auto auto;
-    transition: rotate, bounce ease 0.5s;
 }
 
 .log-in-out-btn:disabled {
@@ -58,12 +57,6 @@
     border-radius: 50%;
     cursor: default;
     border: #3f51b5 solid 3px;
-    animation: bounce 0.3s ease-in;
+    animation: bounce 1s ease-in;
     background: transparent center no-repeat url("../img/tick.svg");
-}
-
-@keyframes bounce {
-    from {
-        transform: scale(0.8);
-    }
 }

@@ -48,7 +48,7 @@ body {
 
 }
 
-@media (max-aspect-ratio: 5 / 2) and (max-width: 1200px), (max-width: 400px), (max-height: 250px){
+@media (max-aspect-ratio: 5 / 2) and (max-width: 1200px), (max-width: 480px), (max-height: 250px){
     html {
         font-size: 50%;
     }
@@ -59,7 +59,7 @@ body {
     #main-container {
         min-width: 350px;
         max-width: 780px;
-        min-height: 390px;
+        min-height: 430px;
         max-height: 500px;
         width: 45%;
         height: 65%;
@@ -69,12 +69,6 @@ body {
         border-radius: 40px;
         padding: 5vh 5vw;
         box-shadow: 0 0 25px rgba(63, 81, 181, 0.5);
-    }
-
-    @media (min-aspect-ratio: 2 / 3) and (max-aspect-ratio: 3 / 2), (max-aspect-ratio: 5 / 2) {
-        #main-container {
-            min-height: 420px;
-        }
     }
 
     #logo {

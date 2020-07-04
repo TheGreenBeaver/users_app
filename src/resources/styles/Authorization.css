@@ -21,10 +21,10 @@
 }
 
 #error-alert {
-    width: 85%;
+    width: 90%;
     min-width: 180px;
     font-size: 2rem;
-    margin: 5vh auto auto;
+    margin: 3vh auto auto;
     color: #757575;
 }
 

@@ -87,10 +87,12 @@
 }
 
 .column {
+    width: 50%;
     height: 100%;
 }
 
 .column p {
+    white-space: nowrap;
     font-size: 2rem;
     color: #757575;
     display: block;

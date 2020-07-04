@@ -98,15 +98,15 @@ class ExactUser extends Component {
                     >
 
                         <p>
-                            {exactUser.username}
+                            {this.cutText(exactUser.username)}
                         </p>
 
                         <p>
-                            {exactUser.first_name}
+                            {this.cutText(exactUser.first_name)}
                         </p>
 
                         <p>
-                            {exactUser.last_name}
+                            {this.cutText(exactUser.last_name)}
                         </p>
 
                     </div>
@@ -116,6 +116,14 @@ class ExactUser extends Component {
             </div>
 
         );
+    }
+
+    cutText = str => {
+        if (str.length <= 18) {
+            return str
+        }
+
+        return str.substr(0, 18) + '...'
     }
 }
 

@@ -36,7 +36,7 @@ class App extends Component {
             >
                 <img
                     id='logo'
-                    src='https://raw.githubusercontent.com/TheGreenBeaver/ImgStorage/4b1beb035a7db28d9ea803129695e146d5c3a20b/usersApp/logo.svg'
+                    src='https://raw.githubusercontent.com/TheGreenBeaver/ImgStorage/3fd5d56bc45eb288f0db18b0e27f40b224946838/usersApp/logo.svg'
                     alt='logo'
                 />
 

@@ -118,7 +118,7 @@ class List extends Component {
                                         Id:{user.id}
                                     </p>
                                     <p className='u-name'>
-                                        {user.username}
+                                        {this.cutUsername(user.username)}
                                     </p>
                                 </div>
 
@@ -176,6 +176,13 @@ class List extends Component {
 
     selectUser = id => {
         this.props.history.push(`/users_app/${id}`)
+    };
+
+    cutUsername = username => {
+        if (username.length > 16) {
+            return username.substr(0, 15) + '...'
+        }
+        return username;
     }
 }
 

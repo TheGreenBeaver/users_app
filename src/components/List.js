@@ -70,7 +70,6 @@ class List extends Component {
                     style={
                         {
                             width: '80%',
-                            minWidth: '320px',
                             height: '70%',
                             margin: '3vh auto auto',
                             borderRadius: '10px 10px'
@@ -109,13 +108,20 @@ class List extends Component {
                         user => (
                             <li
                                 key={user.id}
+                                onClick={() => this.selectUser(user.id)}
                             >
-                                <Link
+
+                                <div
                                     className='user-link'
-                                    to={`/users_app/${user.id}`}
                                 >
-                                    Id: {user.id} - {user.username}
-                                </Link>
+                                    <p className='u-id'>
+                                        Id:{user.id}
+                                    </p>
+                                    <p className='u-name'>
+                                        {user.username}
+                                    </p>
+                                </div>
+
                             </li>
                         )
                     )
@@ -166,6 +172,10 @@ class List extends Component {
         this.setState({
             sortDirection: -this.state.sortDirection
         })
+    };
+
+    selectUser = id => {
+        this.props.history.push(`/users_app/${id}`)
     }
 }
 

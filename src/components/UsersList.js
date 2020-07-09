@@ -28,7 +28,7 @@ class UsersList extends Component {
 
     onGetUsersSuccess = data => {
         this.setState({
-            listOfUsers: data.sort((userA, userB) => +userA.id - (+userB.id))
+            listOfUsers: data
         })
     };
 

@@ -15,7 +15,8 @@ class List extends Component {
     }
 
     state = {
-        search: ''
+        search: '',
+        sortDirection: 1
     };
 
     render() {
@@ -26,11 +27,15 @@ class List extends Component {
                     id='search-bar-container'
                 >
 
-                    <img
-                        id='search-icon'
-                        src='https://raw.githubusercontent.com/TheGreenBeaver/ImgStorage/ad90900ff126f32a44528ac6fab06596a98861d4/usersApp/search.svg'
-                        alt='search'
-                    />
+                    <div
+                        className='in-search-container'
+                    >
+                        <img
+                            id='search-icon'
+                            src='https://raw.githubusercontent.com/TheGreenBeaver/ImgStorage/ad90900ff126f32a44528ac6fab06596a98861d4/usersApp/search.svg'
+                            alt='search'
+                        />
+                    </div>
 
                     <input
                         id='search-input'
@@ -38,6 +43,17 @@ class List extends Component {
                         placeholder='search user'
                         onChange={this.search}
                     />
+
+                    <div
+                        className='in-search-container'
+                    >
+                        <button
+                            className={this.state.sortDirection === 1 ? 'up-sort' : 'down-sort'}
+                            onClick={this.toggleSort}
+                        >
+                            {''}
+                        </button>
+                    </div>
 
                 </div>
 
@@ -54,6 +70,7 @@ class List extends Component {
                     style={
                         {
                             width: '80%',
+                            minWidth: '320px',
                             height: '70%',
                             margin: '3vh auto auto',
                             borderRadius: '10px 10px'
@@ -76,8 +93,10 @@ class List extends Component {
 
     ListItems = () => {
 
-        const { allUsers } =  this.props;
-        const { search } = this.state;
+        const { search, sortDirection } = this.state;
+        const allUsers = this.props.allUsers.sort(
+            (userA, userB) => sortDirection * (+userA.id - (+userB.id))
+        );
 
         const filteredList = allUsers.filter(
             user => user.username.includes(search)
@@ -88,12 +107,14 @@ class List extends Component {
                 {
                     filteredList.map(
                         user => (
-                            <li key={user.id}>
+                            <li
+                                key={user.id}
+                            >
                                 <Link
                                     className='user-link'
                                     to={`/users_app/${user.id}`}
                                 >
-                                    {user.username}
+                                    Id: {user.id} - {user.username}
                                 </Link>
                             </li>
                         )
@@ -139,6 +160,12 @@ class List extends Component {
     scrollShadow = values => {
         const { scrollTop } = values;
         $('#shadow-dropper').css('top', scrollTop);
+    };
+
+    toggleSort = () => {
+        this.setState({
+            sortDirection: -this.state.sortDirection
+        })
     }
 }
 

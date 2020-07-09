@@ -5,8 +5,8 @@
 }
 
 #search-icon {
-    display: flex;
     height: 3.5rem;
+    margin-right: 5px;
 }
 
 #search-bar-container {
@@ -18,13 +18,13 @@
 }
 
 #search-input {
-    width: 90%;
-    display: flex;
+    flex: 7;
     padding: 4px 8px;
     border: #c5cae9 5px solid;
     border-radius: 10px;
     font-size: 2rem;
     color: #757575;
+    min-width: 60%;
 }
 
 #users-list-container {
@@ -74,6 +74,7 @@
 #distribution-container {
     height: 80%;
     min-height: 180px;
+    min-width: 320px;
 }
 
 #user-info-wrapper {
@@ -184,4 +185,39 @@
     opacity: 0.9;
     box-shadow: 0 0 10px #3f51b5;
     cursor: pointer;
+}
+
+.up-sort,
+.down-sort
+{
+    height: 4.5rem;
+    min-width: 4.5rem;
+    width: 4.5rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.up-sort {
+    background: center no-repeat url("../img/sortUp.svg");
+    background-size: 95%;
+}
+
+.down-sort {
+    background: center no-repeat url("../img/sortDown.svg");
+    background-size: 95%;
+}
+
+.up-sort:hover {
+    background: center no-repeat url("../img/sortUpHvr.svg");
+    background-size: 95%;
+}
+
+.down-sort:hover {
+    background: center no-repeat url("../img/sortDownHvr.svg");
+    background-size: 95%;
+}
+
+.in-search-container {
+    flex: 1
 }

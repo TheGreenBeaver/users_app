@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="-7.5630214"
-     inkscape:cy="33.485795"
+     inkscape:cx="-13.243831"
+     inkscape:cy="26.699256"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -41,7 +41,7 @@
      inkscape:object-paths="true"
      inkscape:snap-intersection-paths="true"
      inkscape:snap-smooth-nodes="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      showguides="false"
      inkscape:snap-midpoints="true"
      units="px"
@@ -88,19 +88,22 @@
        id="path985"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccssscscsscscsssscsssssss" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path975"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.10055041px;line-height:1.25;font-family:Haettenschweiler;-inkscape-font-specification:'Haettenschweiler, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.09277584"
-       d="M 4.7341134,285.50442 H 4.2176891 v -0.37872 h 0.5164243 z m 0,2.21973 H 4.2176891 v -2.10376 h 0.5164243 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path977"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.10055041px;line-height:1.25;font-family:Haettenschweiler;-inkscape-font-specification:'Haettenschweiler, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.09277584"
-       d="M 6.0496446,287.72415 H 5.6600673 l -0.043447,-0.0706 q -0.1322809,0.0997 -0.3007917,0.0997 -0.1975116,0 -0.3370337,-0.0924 -0.1377147,-0.0924 -0.1377147,-0.25187 v -1.51124 q 0,-0.13409 0.1086781,-0.212 0.1105931,-0.0797 0.2663689,-0.0797 0.2138253,0 0.3189127,0.0779 v -0.55811 h 0.514617 z m -0.514617,-0.39321 v -1.30647 q 0,-0.0924 -0.08881,-0.0924 -0.090605,0 -0.090605,0.096 v 1.30285 q 0,0.096 0.090605,0.096 0.08881,0 0.08881,-0.096 z" />
     <g
-       aria-label="1
-"
+       id="g822"
+       transform="matrix(1.1012291,0,0,0.9462,-0.25184249,15.575998)">
+      <path
+         d="M 4.3562858,285.63202 H 3.6658725 v -0.50631 h 0.6904133 z m 0,2.96759 H 3.6658725 v -2.81254 h 0.6904133 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.10055041px;line-height:1.25;font-family:Haettenschweiler;-inkscape-font-specification:'Haettenschweiler, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.12403302"
+         id="path975"
+         inkscape:connector-curvature="0" />
+      <path
+         d="M 6.1150337,288.59961 H 5.5942036 l -0.058085,-0.0944 q -0.1768478,0.13329 -0.4021317,0.13329 -0.2640554,0 -0.450584,-0.12353 -0.1841123,-0.12353 -0.1841123,-0.33673 v -2.02039 q 0,-0.17927 0.145293,-0.28343 0.1478531,-0.10655 0.3561114,-0.10655 0.2858654,0 0.4263579,0.10415 v -0.74615 h 0.687997 z m -0.6879971,-0.52569 v -1.74663 q 0,-0.12354 -0.118731,-0.12354 -0.1211308,0 -0.1211308,0.12835 v 1.74179 q 0,0.12835 0.1211308,0.12835 0.118731,0 0.118731,-0.12835 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.10055041px;line-height:1.25;font-family:Haettenschweiler;-inkscape-font-specification:'Haettenschweiler, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.12403302"
+         id="path977"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       aria-label="1 "
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.6538682px;line-height:1.25;font-family:Haettenschweiler;-inkscape-font-specification:'Haettenschweiler, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.14134666"
        id="text913"
        transform="matrix(1.196895,0,0,1.196895,-128.41216,138.61693)">
@@ -113,8 +116,8 @@
     </g>
     <path
        inkscape:connector-curvature="0"
-       style="opacity:1;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.5814122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-       d="m 5.1339869,288.6385 -1.9495505,2.83959 1.1992888,-0.12309 v 3.98137 H 5.8830038 V 291.355 l 1.1999112,0.12309 z"
+       style="opacity:1;fill:#939cd6;fill-opacity:1;stroke:none;stroke-width:0.57419008;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 5.1339869,288.80386 -1.9495505,2.76949 1.1992888,-0.12005 v 3.88307 h 1.4992786 v -3.88307 l 1.1999112,0.12005 z"
        id="rect967" />
   </g>
 </svg>

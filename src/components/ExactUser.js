@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import '../resources/styles/UsersList.css'
 import {Link} from "react-router-dom";
-import $ from 'jquery'
 
 class ExactUser extends Component {
 

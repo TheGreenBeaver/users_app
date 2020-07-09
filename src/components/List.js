@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../resources/styles/UsersList.css'
 import PropTypes from 'prop-types';
-import {Link} from "react-router-dom";
 import $ from 'jquery';
 import { Scrollbars } from 'react-custom-scrollbars';
 
@@ -11,8 +10,20 @@ class List extends Component {
     constructor(props) {
         super(props);
 
+        const dir = localStorage.getItem('dir');
+        if (dir !== null) {
+            this.state.sortDirection = +dir;
+        }
         this.scrollRef = React.createRef();
     }
+
+    componentDidMount() {
+        window.addEventListener('beforeunload', this.saveState, false)
+    }
+
+    saveState = () => {
+        localStorage.setItem('dir', `${this.state.sortDirection}`);
+    };
 
     state = {
         search: '',
@@ -180,7 +191,7 @@ class List extends Component {
 
     cutUsername = username => {
         if (username.length > 16) {
-            return username.substr(0, 15) + '...'
+            return username.substr(0, 13) + '...'
         }
         return username;
     }

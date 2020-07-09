@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "92654be47f8e418a663f4759486dff3a",
+    "revision": "345621638825e407bfe51785d640ca68",
     "url": "/users_app/index.html"
   },
   {
-    "revision": "69858dd562cce65b9660",
-    "url": "/users_app/static/css/main.37e0fcce.chunk.css"
+    "revision": "19f7c4126e679c47c1cd",
+    "url": "/users_app/static/css/main.d47e0e07.chunk.css"
   },
   {
-    "revision": "2b32ff6e0e40416cbea9",
-    "url": "/users_app/static/js/2.3944675a.chunk.js"
+    "revision": "efa8bbfa257db8ef433e",
+    "url": "/users_app/static/js/2.7f3dc91e.chunk.js"
   },
   {
     "revision": "ffa35a34964860fdc97ed79ca9abd27c",
-    "url": "/users_app/static/js/2.3944675a.chunk.js.LICENSE.txt"
+    "url": "/users_app/static/js/2.7f3dc91e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69858dd562cce65b9660",
-    "url": "/users_app/static/js/main.43a72e4b.chunk.js"
+    "revision": "19f7c4126e679c47c1cd",
+    "url": "/users_app/static/js/main.65d27258.chunk.js"
   },
   {
     "revision": "f60839bd5b957a2cf726",
@@ -48,20 +48,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/users_app/static/media/prevUsrHvr.6d516444.svg"
   },
   {
-    "revision": "1eba5d88f4fdcb6ce66232c50c5026aa",
-    "url": "/users_app/static/media/sortDown.1eba5d88.svg"
+    "revision": "2a6ce7df46961e593f78cc6673095bd9",
+    "url": "/users_app/static/media/sortDown.2a6ce7df.svg"
   },
   {
-    "revision": "ca13c5894f38bbbdfebbc1895f5311ab",
-    "url": "/users_app/static/media/sortDownHvr.ca13c589.svg"
+    "revision": "85e6a6185574ab8294a780db6d70220e",
+    "url": "/users_app/static/media/sortDownHvr.85e6a618.svg"
   },
   {
-    "revision": "e3acf31ce2782023157c83c1c9c7750e",
-    "url": "/users_app/static/media/sortUp.e3acf31c.svg"
+    "revision": "ea027d01ff35bd6bcf9f37390211ea31",
+    "url": "/users_app/static/media/sortUp.ea027d01.svg"
   },
   {
-    "revision": "4ebc112559bb408e0ed8814556e07cc4",
-    "url": "/users_app/static/media/sortUpHvr.4ebc1125.svg"
+    "revision": "a749e2efed1b916015f9329c226c17cc",
+    "url": "/users_app/static/media/sortUpHvr.a749e2ef.svg"
   },
   {
     "revision": "3d591ffe15b019dba53c34d39295fb70",
